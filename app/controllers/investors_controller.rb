@@ -1,7 +1,4 @@
 class InvestorsController < ApplicationController
-has_one :portfolio 
-has_many :stocks, through: :portfolio
-
 
     def index
         investor =Investor.all 
