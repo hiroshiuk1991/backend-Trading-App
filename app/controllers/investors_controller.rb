@@ -12,7 +12,7 @@ class InvestorsController < ApplicationController
 
     def create
         investor = Investor.create(investor_params)
-        render json: {investor_name: investor.name, investor_id: investor.id, token:issue_token({id: investor.id})
+        render json: {investor_name: investor.name, investor_id: investor.id, token:issue_token({id: investor.id})}
     end 
 
     def destroy

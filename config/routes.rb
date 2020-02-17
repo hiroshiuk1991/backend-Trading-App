@@ -6,7 +6,7 @@ Rails.application.routes.draw do
 
   post '/login', to: 'investors#login'
   get '/validate', to: 'investors#validate'
-  get '/fetchinvestorporfolio', to: 'fetchinvestorportfolio'
+  # get '/fetchinvestorporfolio', to: 'fetchinvestorportfolio'
 
 
 end
