@@ -1,7 +1,7 @@
 class CreateInvestors < ActiveRecord::Migration[6.0]
   def change
     create_table :investors do |t|
-      t.string :investor
+      t.string :name
       t.string :email
       t.string :password_digest
       t.integer :wallet

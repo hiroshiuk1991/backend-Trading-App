@@ -1,0 +1,5 @@
+class Api < ApplicationRecord
+
+
+    
+end

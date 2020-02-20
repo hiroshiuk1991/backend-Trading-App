@@ -1,7 +1,7 @@
 class InvestorsController < ApplicationController
 
     def index
-        investor =Investor.all 
+        investor = Investor.all 
         render json: investor
     end 
 
@@ -53,7 +53,7 @@ class InvestorsController < ApplicationController
     private 
 
     def investor_params
-        params.require(:investor).permit(:username, :password)
+        params.require(:investor).permit(:name, :password)
     end 
 
 end
