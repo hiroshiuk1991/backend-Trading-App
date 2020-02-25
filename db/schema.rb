@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_17_163717) do
+ActiveRecord::Schema.define(version: 2020_02_25_092317) do
 
   create_table "apis", force: :cascade do |t|
     t.datetime "created_at", precision: 6, null: false
@@ -30,6 +30,13 @@ ActiveRecord::Schema.define(version: 2020_02_17_163717) do
     t.string "name"
     t.integer "investor_id"
     t.integer "stock_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "quiz_scores", force: :cascade do |t|
+    t.integer "score"
+    t.integer "investor_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

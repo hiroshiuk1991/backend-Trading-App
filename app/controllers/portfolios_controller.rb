@@ -18,7 +18,7 @@ end
 private 
 
 def portfolio_params
-    parans.require(:portfolio).permit(:customer_id, :item_id, :item_name)
+    params.require(:portfolio).permit()
 end 
 
 

@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :quiz_scores
   resources :apis
   resources :stocks
   resources :portfolios
