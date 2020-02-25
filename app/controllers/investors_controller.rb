@@ -23,10 +23,10 @@ class InvestorsController < ApplicationController
         investor = Investor.find(params[:id])
     end 
 
-    def fetchinvestorportfolio
-        investor = get_current_investor
-        render json: investor.portfolio
-    end 
+    # def fetchinvestorportfolio
+    #     investor = get_current_investor
+    #     render json: investor.portfolio
+    # end 
 
 
     def login

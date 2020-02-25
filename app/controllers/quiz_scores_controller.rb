@@ -11,14 +11,14 @@ def show
 end 
 
 def create
-    quizscore = QuizScore.create(QuizScore_params)
+    quizscore = QuizScore.create(quizscore_params)
     render json: quizscore 
 end
 
 private 
 
-def QuizScore_params
-    params.require(:quizscore).permit(:score, :investor_id)
+def quizscore_params
+    params.permit(:score, :investor_id)
 end 
 
 
