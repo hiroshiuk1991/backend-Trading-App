@@ -21,6 +21,7 @@ class InvestorsController < ApplicationController
 
     def update
         investor = Investor.find(params[:id])
+        render json: investor
     end 
 
     # def fetchinvestorportfolio
@@ -44,7 +45,7 @@ class InvestorsController < ApplicationController
     def validate 
         investor = get_current_investor
         if investor
-            render json:{investor: investor.name, token:issue_token({id: investor.id})}
+            render json:{name: investor.name, investorId: investor.id, token:issue_token({id: investor.id})}
         else
             render json: {error: 'Not Authorized'}, status: 401
         end 
