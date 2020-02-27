@@ -1,5 +1,5 @@
 class QuizScore < ApplicationRecord
 
-    has_many :investors
+    belongs_to :investor
 
 end

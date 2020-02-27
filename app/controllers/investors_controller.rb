@@ -16,7 +16,9 @@ class InvestorsController < ApplicationController
     end 
 
     def destroy
-        Investor.destroy(params[:id])
+        investor = Investor.destroy(params[:id])
+        investor.destroy
+        render json: investor
     end 
 
     def update

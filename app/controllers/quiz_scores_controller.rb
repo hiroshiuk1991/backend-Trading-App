@@ -21,6 +21,11 @@ end
     render json: quiz
 end 
 
+def update
+        quizscore = QuizScore.find(params[:id])
+        render json: quizscore
+    end 
+
 
 private 
 
