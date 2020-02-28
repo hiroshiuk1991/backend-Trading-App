@@ -12,7 +12,7 @@ class InvestorsController < ApplicationController
 
     def create
         investor = Investor.create(investor_params)
-        render json: {investor_name: investor.name, investor_id: investor.id, token:issue_token({id: investor.id})}
+        render json: investor_hash(investor)
     end 
 
     def destroy
@@ -37,7 +37,7 @@ class InvestorsController < ApplicationController
 
         if investor and investor.authenticate(params[:investor][:password])
 
-            render json: {investor_name: investor.name, investor_id: investor.id, token:issue_token({id: investor.id})}
+            render json: investor_hash(investor)
         else 
 
             render json: {error: 'Investor name/password invalid'}, status: 403
@@ -47,13 +47,17 @@ class InvestorsController < ApplicationController
     def validate 
         investor = get_current_investor
         if investor
-            render json:{name: investor.name, investorId: investor.id, token:issue_token({id: investor.id})}
+            render json: investor_hash(investor)
         else
             render json: {error: 'Not Authorized'}, status: 401
         end 
     end 
 
     private 
+
+    def investor_hash(investor)
+        {name: investor.name, investorId: investor.id, token:issue_token({id: investor.id})}
+    end
 
     def investor_params
         params.require(:investor).permit(:name, :password)
