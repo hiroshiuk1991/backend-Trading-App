@@ -1,6 +1,7 @@
 class Investor < ApplicationRecord
 validates :name, presence: true
-    has_secure_password 
+validates :password, length: { in: 6..20 }
+    has_secure_password
 
     has_many :quiz_score
 
