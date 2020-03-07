@@ -23,6 +23,8 @@ class InvestorsController < ApplicationController
 
     def update
         investor = Investor.find(params[:id])
+        investor.update(investor_params)
+        # byebug
         render json: investor
     end 
 
